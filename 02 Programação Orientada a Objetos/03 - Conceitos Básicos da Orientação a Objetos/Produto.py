@@ -24,6 +24,13 @@ class Produto:
 
     def comprar(self, quantidade):
         self.quantidade = self.quantidade + quantidade
+        
+    def mostrar_detalhes(self):
+        print("Nome:",self.nome)
+        print("Marca:",self.marca)
+        print("Modelo:",self.modelo)
+        print("Valor:",self.valor)
+        print("Quantidade:",self.quantidade)
 
 
 # De uma única classe eu posso criar vários objetos
@@ -45,3 +52,6 @@ print(produto2.__dict__)  # {'nome': 'Notebook', 'marca': 'LG', 'modelo': '', 'v
 
 # tentando vender mais do que têm
 produto2.vender(100)
+
+print("\n--- Detalhes ---")
+produto2.mostrar_detalhes()
