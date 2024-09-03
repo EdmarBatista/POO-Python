@@ -1,6 +1,6 @@
 # Classes em python começam com letra maiúscula
 class Produto:
-    #   ...  ## ... ou pass não faz nada
+    #   ...  # ... ou pass não faz nada
 
     # O __init__ é o construtor da classe, esse método é executado toda vez que a classe é instânciada
     # self equivale ao this de outras linguagens
