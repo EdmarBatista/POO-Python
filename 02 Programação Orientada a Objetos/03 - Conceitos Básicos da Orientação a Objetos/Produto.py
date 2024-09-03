@@ -4,7 +4,7 @@ class Produto:
 
     # O __init__ é o construtor da classe, esse método é executado toda vez que a classe é instânciada
     # self equivale ao this de outras linguagens
-    # def __init__(self)  # Se eu não colocar mais variaveis posso instâncias com Produto()
+    # def __init__(self)  # Se eu não colocar mais variáveis posso instâncias com Produto()
     def __init__(self, nome, valor, modelo = "", quantidade = 0):  # Se eu colocar variáveis elas serão obrigatórias na instânciação: Produto("NotebookBarato",100), o self não conta como parâmetro obrigatório
         # Se eu não colocar o modelo ele fica como '' por padrão
         self.nome = nome
