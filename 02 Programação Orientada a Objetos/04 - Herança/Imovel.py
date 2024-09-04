@@ -82,7 +82,7 @@ class ImovelResidencialDaAbstrata(ImovelAbstrato):
         return self.valor * 0.01
 
 
-# Não consigo instancia a classe Abstrata
+# Não consigo instanciar uma classe Abstrata
 # casaDaAbstrata = ImovelAbstrato("Imóvel Abstrato", "DF", 500000) # TypeError: Can't instantiate abstract class ImovelAbstrato without an implementation for abstract method 'aluguelSugerido'
 casaDaAbstrata = ImovelResidencialDaAbstrata("Minha casa Abstrata", "SP", 300000)
 print("Aluguel sugerido pela casaDaAbstrata:", casaDaAbstrata.aluguelSugerido())
