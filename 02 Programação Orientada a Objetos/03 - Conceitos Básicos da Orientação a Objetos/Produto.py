@@ -5,7 +5,8 @@ class Produto:
     # O __init__ é o construtor da classe, esse método é executado toda vez que a classe é instânciada
     # self equivale ao this de outras linguagens
     # def __init__(self)  # Se eu não colocar mais variáveis posso instâncias com Produto()
-    def __init__(self, nome, valor, modelo = "", quantidade = 0):  # Se eu colocar variáveis elas serão obrigatórias na instânciação: Produto("NotebookBarato",100), o self não conta como parâmetro obrigatório
+    # Se eu colocar variáveis elas serão obrigatórias na instânciação: Produto("NotebookBarato",100), o self não conta como parâmetro obrigatório
+    def __init__(self, nome, valor, modelo="", quantidade=0):
         # Se eu não colocar o modelo ele fica como '' por padrão
         self.nome = nome
         self.marca = "Samsung"
@@ -13,9 +14,7 @@ class Produto:
         self.valor = valor
         self.quantidade = quantidade
 
-    def vender(
-        self, quantidade
-    ):  # A rigor os métodos de uma classe precisão receber o self
+    def vender(self, quantidade):  # A rigor os métodos de uma classe precisão receber o self
         if quantidade > self.quantidade:
             print("Não ha estoque suficiênte")
             print(f"Quntidade máxima: {self.quantidade}")
@@ -24,13 +23,13 @@ class Produto:
 
     def comprar(self, quantidade):
         self.quantidade = self.quantidade + quantidade
-        
+
     def mostrar_detalhes(self):
-        print("Nome:",self.nome)
-        print("Marca:",self.marca)
-        print("Modelo:",self.modelo)
-        print("Valor:",self.valor)
-        print("Quantidade:",self.quantidade)
+        print("Nome:", self.nome)
+        print("Marca:", self.marca)
+        print("Modelo:", self.modelo)
+        print("Valor:", self.valor)
+        print("Quantidade:", self.quantidade)
 
 
 # De uma única classe eu posso criar vários objetos
@@ -44,11 +43,13 @@ print(produto)  # <__main__.Produto object at 0x00000280BF549DC0>
 print(produto.__dict__)
 
 print(produto2)
-print(produto2.__dict__)  # Mostra os atributos de um objeto  ->  {'nome': 'Notebook', 'marca': 'LG', 'modelo': '', 'valor': 100, 'quantidade': 0}
+# Mostra os atributos de um objeto  ->  {'nome': 'Notebook', 'marca': 'LG', 'modelo': '', 'valor': 100, 'quantidade': 0}
+print(produto2.__dict__)
 produto2.comprar(80)
 produto2.vender(20)
 # tinha 0, comprei 80 e vendi 20
-print(produto2.__dict__)  # {'nome': 'Notebook', 'marca': 'LG', 'modelo': '', 'valor': 100, 'quantidade': 60}
+# {'nome': 'Notebook', 'marca': 'LG', 'modelo': '', 'valor': 100, 'quantidade': 60}
+print(produto2.__dict__)
 
 # tentando vender mais do que têm
 produto2.vender(100)
