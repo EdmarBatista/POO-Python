@@ -1,0 +1,70 @@
+'''
+Os métodos especiais são frequentemente chamados de métodos mágicos (ou magic methods em inglês) ou métodos dunder (abreviação de "double underscore", por causa dos dois sublinhados "__" que cercam seus nomes).
+
+Eles permitem sobrecarregar operadores padrão (como +, >, <, etc.) ou definir comportamentos personalizados para operações comuns, como converter um objeto para string (__str__) ou criar um novo objeto (__init__).
+
+Aqui estão alguns exemplos comuns de métodos mágicos:
+
+    __init__: Inicializador de instância (construtor).
+    __str__: Retorna uma representação em string do objeto (para uso com print() e str()).
+    __repr__: Retorna uma representação "oficial" da string do objeto (usada para depuração).
+    __add__: Sobrecarga do operador de adição +.
+    __sub__: Sobrecarga do operador de subtração -.
+    __eq__: Sobrecarga do operador de igualdade ==.
+    __lt__: Sobrecarga do operador de "menor que" <.
+    __gt__: Sobrecarga do operador de "maior que" >.
+    __len__: Define o comportamento da função len() para o objeto.
+    __getitem__: Define o comportamento de indexação (como acessar elementos em uma lista).
+
+Eles são chamados automaticamente pelo interpretador Python quando suas operações correspondentes são realizadas em objetos da classe que os implementa.
+
+'''
+
+
+class Imovel:
+    def __init__(self, nome, quartos, suites):
+        # Método especial __init__ é o construtor da classe, chamado automaticamente na criação de um objeto.
+        self.nome = nome
+        self.quartos = quartos
+        self.suites = suites
+
+    def __add__(self, other):
+        # Método especial __add__ sobrecarrega o operador + para definir como somar dois objetos da classe Imovel.
+        somaSelf = self.quartos + self.suites
+        somaOther = other.quartos + other.suites
+        return somaSelf + somaOther
+
+    def __gt__(self, other):
+        # Método especial __gt__ sobrecarrega o operador > para comparar dois objetos da classe Imovel.
+        somaSelf = self.quartos + self.suites
+        somaOther = other.quartos + other.suites
+        return somaSelf > somaOther
+
+    def __lt__(self, other):
+        # Método especial __lt__ sobrecarrega o operador < para comparar dois objetos da classe Imovel.
+        somaSelf = self.quartos + self.suites
+        somaOther = other.quartos + other.suites
+        return somaSelf < somaOther
+
+    def __str__(self):
+        # Método especial __str__ sobrecarrega a conversão de um objeto para string,
+        # definindo como o objeto será representado quando usado em uma função print() ou str().
+        return str(self.__dict__)
+
+
+casarao = Imovel("Casarão", 3, 4)
+print(casarao.__dict__)  # Imprime o dicionário de atributos do objeto casarao.
+
+mansao = Imovel("Mansão", 4, 5)
+print(mansao.__dict__)  # Imprime o dicionário de atributos do objeto mansao.
+
+# Utiliza o método __add__ para somar dois objetos da classe Imovel.
+soma = casarao + mansao
+print(soma)
+
+# Utiliza o método __gt__ para comparar se casarao é maior que mansao.
+print(casarao > mansao)
+# Utiliza o método __lt__ para comparar se casarao é menor que mansao.
+print(casarao < mansao)
+# Utiliza o método __str__ para obter a representação em string do objeto casarao.
+print(casarao)
