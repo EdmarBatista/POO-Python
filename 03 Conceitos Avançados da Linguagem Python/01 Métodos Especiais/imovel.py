@@ -22,6 +22,9 @@ Eles são chamados automaticamente pelo interpretador Python quando suas operaç
 
 
 class Imovel:
+    # Esse é um atributo da classe, compartilhado por todas as instâncias. Não é específico de um objeto (Não usei o self para adicioná-lo)
+    imposto = 0.2
+
     def __init__(self, nome, quartos, suites):
         # Método especial __init__ é o construtor da classe, chamado automaticamente na criação de um objeto.
         self.nome = nome
@@ -51,6 +54,22 @@ class Imovel:
         # definindo como o objeto será representado quando usado em uma função print() ou str().
         return str(self.__dict__)
 
+# # ---------- Métodos e atributos da classe  ----------
+    def detalhar(self):  # Para chamar esse método preciso instanciar a classe
+        return self.__dict__
+
+    def somarAposentos(self):  # Para chamar esse método preciso instanciar a classe
+        return self.quartos + self.suites
+
+    @staticmethod
+    def metodoEstatico():  # não pode ter o self
+        print('Chamou o método estático sem criar um objeto')
+
+    @classmethod
+    # Os métodos da classe recebem como paramentro o cls (é como o self, só que da class, e não do objerto)
+    def metodoClasse(cls):
+        print('Chamou o método de classe que vê o imposto: ', cls.imposto)
+
 
 casarao = Imovel("Casarão", 3, 4)
 print(casarao.__dict__)  # Imprime o dicionário de atributos do objeto casarao.
@@ -68,3 +87,15 @@ print(casarao > mansao)
 print(casarao < mansao)
 # Utiliza o método __str__ para obter a representação em string do objeto casarao.
 print(casarao)
+
+# ---------- Métodos e atributos da classe ----------
+
+# Chama o método de instância para somar os aposentos do objeto casarao.
+print(casarao.somarAposentos())
+# Chama o método de instância para somar os aposentos do objeto mansao.
+print(mansao.somarAposentos())
+
+# Chama o método estático diretamente pela classe, sem instanciar um objeto.
+Imovel.metodoEstatico()
+Imovel.metodoClasse()    # Chama o método de classe diretamente pela classe.
+print(Imovel.imposto)    # Acessa o atributo de classe diretamente pela classe.
