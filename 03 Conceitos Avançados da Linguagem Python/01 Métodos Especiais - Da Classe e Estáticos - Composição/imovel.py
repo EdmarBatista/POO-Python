@@ -21,6 +21,18 @@ Eles são chamados automaticamente pelo interpretador Python quando suas operaç
 '''
 
 
+# Na composição eu uso uma classe como atributo de outra classe (Não é herança)
+class Categoria:
+    def __init__(self, tipo=''):
+        self.tipo = tipo
+
+    def taxaAgua(self, consumo):
+        match self.tipo:
+            case 'Clínica': return 1 * consumo
+            case 'Restaurante': return 2 * consumo
+            case 'Hotel': return 2.5 * consumo
+
+
 class Imovel:
     # Esse é um atributo da classe, compartilhado por todas as instâncias. Não é específico de um objeto (Não usei o self para adicioná-lo)
     imposto = 0.2
@@ -30,6 +42,8 @@ class Imovel:
         self.nome = nome
         self.quartos = quartos
         self.suites = suites
+        # EStou Instanciando um objeto da classe Categoria (Composição)
+        self.categoria = Categoria()
 
     def __add__(self, other):
         # Método especial __add__ sobrecarrega o operador + para definir como somar dois objetos da classe Imovel.
@@ -99,3 +113,12 @@ print(mansao.somarAposentos())
 Imovel.metodoEstatico()
 Imovel.metodoClasse()    # Chama o método de classe diretamente pela classe.
 print(Imovel.imposto)    # Acessa o atributo de classe diretamente pela classe.
+
+
+# ---------- Composição ----------
+
+categoria = Categoria("Hotel")
+hotel = Imovel("Hotel do Zé", 0, 150)
+hotel.categoria = categoria
+# O hotel não tem taxaAgua, quem tem é a categoria (Coposição é diferente de herança)
+print(hotel.categoria.taxaAgua(100))
