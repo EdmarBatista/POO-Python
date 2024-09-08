@@ -42,7 +42,7 @@ class Imovel:
         self.nome = nome
         self.quartos = quartos
         self.suites = suites
-        # EStou Instanciando um objeto da classe Categoria (Composição)
+        # Estou Instanciando um objeto da classe Categoria (Composição)
         self.categoria = Categoria()
 
     def __add__(self, other):
