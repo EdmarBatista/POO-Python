@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 # Ou recebe a data passada como parametro ou recebe a data atual
 def formatarData(data=datetime.now(), formato='%d/%m/%Y'):
     # print(data)
