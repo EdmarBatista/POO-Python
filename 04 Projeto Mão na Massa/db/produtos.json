@@ -1,43 +1,31 @@
 [
     {
-        "codigo": "001",
-        "nome": "Celular",
+        "codigo": "005",
+        "nome": "Mouse",
         "quantidade": 100,
         "valor": 2000
     },
     {
-        "codigo": "002",
-        "nome": "Relogio",
+        "codigo": "005",
+        "nome": "Mouse",
         "quantidade": 100,
         "valor": 2000
     },
     {
-        "codigo": "001",
-        "nome": "Relogio",
+        "codigo": "005",
+        "nome": "Mouse",
         "quantidade": 100,
         "valor": 2000
     },
     {
-        "codigo": "001",
-        "nome": "Relogio",
+        "codigo": "005",
+        "nome": "Mouse",
         "quantidade": 100,
         "valor": 2000
     },
     {
-        "codigo": "001",
-        "nome": "Relogio",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "001",
-        "nome": "Relogio",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "001",
-        "nome": "Relogio",
+        "codigo": "005",
+        "nome": "Mouse",
         "quantidade": 100,
         "valor": 2000
     }
