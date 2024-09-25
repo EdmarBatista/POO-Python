@@ -17,3 +17,17 @@ categoria.listarTodos()
 print("Produto.listarTodos()")
 Produto.listarTodos() # Chama o método da classe
 
+
+print("print(Produto.consultar(2))")
+print(Produto.consultar(2))
+
+
+itemAlterar=Produto.consultar(1)
+print(itemAlterar["nome"])
+
+produto=Produto(itemAlterar['codigo'],itemAlterar['nome'],60,4000)
+print(produto.detalhar())
+produto.alterar(1)
+
+
+Produto.excluir(0)
