@@ -1,68 +1,14 @@
 [
     {
-        "codigo": "005",
-        "nome": "Mouse",
-        "quantidade": 60,
-        "valor": 4000
+        "codigo": "5",
+        "nome": "Celular",
+        "quantidade": "4",
+        "valor": "4000"
     },
     {
-        "codigo": "003",
-        "nome": "Teclado",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "005",
-        "nome": "Mouse",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "005",
-        "nome": "Mouse",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "005",
-        "nome": "Mouse",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "005",
-        "nome": "Mouse",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "005",
-        "nome": "Mouse",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "005",
-        "nome": "Mouse",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "005",
-        "nome": "Mouse",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "005",
-        "nome": "Mouse",
-        "quantidade": 100,
-        "valor": 2000
-    },
-    {
-        "codigo": "005",
-        "nome": "Mouse",
-        "quantidade": 100,
-        "valor": 2000
+        "codigo": "0",
+        "nome": "dfd",
+        "quantidade": "343",
+        "valor": "343"
     }
 ]

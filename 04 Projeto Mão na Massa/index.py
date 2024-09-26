@@ -1,33 +1,37 @@
 from classes.Produto import Produto
-from classes.Categoria import Categoria
-
-produto=Produto('005','Mouse',100,2000)
-produto.inserir()
-
-categoria=Categoria('Eletrônico')
-print(categoria.detalhar())
-categoria.inserir()
-
-print("produto.listarTodos()")
-produto.listarTodos()
-
-print("categoria.listarTodos()")
-categoria.listarTodos()
-
-print("Produto.listarTodos()")
-Produto.listarTodos() # Chama o método da classe
 
 
-print("print(Produto.consultar(2))")
-print(Produto.consultar(2))
+def menu():
+    print()
+    print("1 - Listar Produtos")
+    print("2 - Inserir Produtos")
+    print("3 - Alterar Produtos")
+    print("4 - Excluir Produtos")
+    print("0 - Sair")
 
 
-itemAlterar=Produto.consultar(1)
-print(itemAlterar["nome"])
+opcao = 1
 
-produto=Produto(itemAlterar['codigo'],itemAlterar['nome'],60,4000)
-print(produto.detalhar())
-produto.alterar(1)
+while opcao != 0:
+    menu()
+    opcao = int(input('Escolha uma opção: '))
 
-
-Produto.excluir(0)
+    match opcao:
+        case 1:
+            print()
+            print(
+                '************************************************************************')
+            Produto.listarTodos()
+            print(
+                '************************************************************************')
+        case 2:
+            codigo = input('Digite o código: ')
+            nome = input('Digite o nome: ')
+            quantidade = input('Digite a quantidade: ')
+            valor = input('Digite o valor: ')
+            produto = Produto(codigo, nome, quantidade, valor)
+            produto.inserir()
+        case 3:
+            ...
+        case 4:
+            ...
